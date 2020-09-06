@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Supremo Sabor</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<script>
+
+		function api(txt) {
+
+			texto = txt
+
+			msg = encodeURI(texto);
+
+			fone = 16988522361
+
+			url = 'https://api.whatsapp.com/send?phone=55' + fone + '&text=' + msg
+
+			window.open(url)
+
+		}
+
+		function pedir() {
+
+			nome = document.getElementById('nome').value
+			pedido = document.getElementsByName('pedido')
+			endereco = document.getElementsByName('endereco')
+			qtd = document.getElementsByName('quant')
+
+
+			apresentacao = 'Olá, sou o ' + nome + ', gostaria de pedir: \n'
+			pedidos = ''
+			localizacao = ''
+			valor = 0
+			obs = ''
+			sabor = ''
+
+			if (document.getElementById('obs').value) {
+				obs += 'Obs : ' + document.getElementById('obs').value
+			}
+
+			for (i = 0; i < endereco.length; i++) {
+				if (endereco[i]) {
+					localizacao += endereco[i].value + ' '
+				}
+			}
+
+			for (i = 0; i < pedido.length; i++) {
+
+				if (pedido[i].checked) {
+
+					if (pedido[i].value == "a") {
+
+						pedidos += qtd[i].value + ' Coca-Cola Lata R$ 5,00\n'
+						valor = valor + (5.00 * qtd[i].value)
+
+					} else if (pedido[i].value == "b") {
+
+						pedidos += qtd[i].value + ' Coca-Cola 600ml R$ 6,00\n'
+						valor = valor + (6.00 * qtd[i].value)
+
+					} else if (pedido[i].value == "bb") {
+
+						pedidos += qtd[i].value + ' Jaboti 2L R$ 6,00\n'
+						valor = valor + (6.00 * qtd[i].value)
+
+					} else if (pedido[i].value == "c") {
+
+						pedidos += qtd[i].value + ' Coca-Cola 2L R$ 10,00\n'
+						valor = valor + (10.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "d") {
+
+						pedidos += qtd[i].value + ' Hot dog simples R$ 9,50\n'
+						valor = valor + (9.50 * qtd[i].value)
+
+					} else if (pedido[i].value == "e") {
+
+						pedidos += qtd[i].value + ' Hot dog bacon R$ 11,00\n'
+						valor = valor + (11.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "f") {
+
+						pedidos += qtd[i].value + ' Misto quente R$ 8,00\n'
+						valor = valor + (8.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "g") {
+
+						pedidos += qtd[i].value + ' X Salada R$ 11,00\n'
+						valor = valor + (11.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "h") {
+
+						pedidos += qtd[i].value + ' X Tudo R$ 15,00\n'
+						valor = valor + (15.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "i") {
+
+						pedidos += qtd[i].value + ' X Frango Tudo R$ 17,00\n'
+						valor = valor + (17.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "j") {
+
+						pedidos += qtd[i].value + ' X Bauru R$ 18,00\n'
+						valor = valor + (18.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "k") {
+
+						pedidos += qtd[i].value + ' Dogão R$ 20,00\n'
+						valor = valor + (20.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "l") {
+
+						pedidos += qtd[i].value + ' X Churrasco Tudo R$ 20,00\n'
+						valor = valor + (20.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "m") {
+
+						pedidos += qtd[i].value + ' S.O.S R$ 25,00\n'
+						valor = valor + (25.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "n") {
+
+						pedidos += qtd[i].value + ' Batata Frita M R$ 12,00\n'
+						valor = valor + (12.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "o") {
+
+						pedidos += qtd[i].value + ' Batata Frita G R$ 20,00\n'
+						valor = valor + 20.00 * (qtd[i].value)
+
+					}
+					else if (pedido[i].value == "p") {
+
+						pedidos += qtd[i].value + ' Batata Maluca1 M R$ 22,00\n'
+						valor = valor + (22.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "q") {
+
+						pedidos += qtd[i].value + ' Batata Maluca1 G R$ 30,00\n'
+						valor = valor + (30.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "r") {
+
+						pedidos += qtd[i].value + ' Batata Maluca2 M R$ 25,00\n'
+						valor = valor + (25.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "s") {
+
+						pedidos += qtd[i].value + ' Batata Maluca2 G R$ 35,00\n'
+						valor = valor + (35.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "t") {
+
+						pedidos += qtd[i].value + ' Batata Supremo 1k R$ 50,00\n'
+						valor = valor + (50.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "u") {
+
+						es = document.getElementsByName('genderu')
+
+						for (x = 0; x < es.length; x++) {
+							if (es[x].checked) {
+								sabor = 'Sabor ' + es[x].value
+								break
+							}
+						}
+
+						pedidos += qtd[i].value + ' Macarrão na chapa P ' + sabor + ' R$ 15,00\n'
+						valor = valor + (15.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "v") {
+
+						es = document.getElementsByName('genderv')
+
+						for (x = 0; x < es.length; x++) {
+							if (es[x].checked) {
+								sabor = 'Sabor ' + es[x].value
+								break
+							}
+						}
+
+						pedidos += qtd[i].value + ' Macarrão na chapa M ' + sabor + ' R$ 22,00\n'
+						valor = valor + (22.00 * qtd[i].value)
+
+					}
+					else if (pedido[i].value == "w") {
+
+						es = document.getElementsByName('genderw')
+
+						for (x = 0; x < es.length; x++) {
+							if (es[x].checked) {
+								sabor = 'Sabor ' + es[x].value
+								break
+							}
+						}
+
+						pedidos += qtd[i].value + ' Macarrão na chapa G ' + sabor + ' R$ 32,00\n'
+						valor = valor + (32.00 * qtd[i].value)
+
+					}
+				}
+			}
+
+			valorTotal = 'Valor Total R$ ' + valor
+			msg = apresentacao + '\n' + pedidos + '\n' + valorTotal + '\n\n' + localizacao + '\n\n' + obs
+
+			confirma = confirm(nome + ', Você confirma esse pedido ?\n\n\n\n' + msg)
+
+			if (confirma == true) {
+				if (msg) api(msg)
+			} else {
+				alert('pedido cancelado!')
+			}
+
+		}
+
+		function limpa_endereco() {
+			//Limpa valores do formulário de cep.
+			document.getElementById('rua').value = ("");
+			document.getElementById('bairro').value = ("");
+			document.getElementById('cidade').value = ("");
+			document.getElementById('uf').value = ("");
+			document.getElementById('cep').value = ("");
+			document.getElementById('numero').value = ("");
+		}
+
+		function limpa_formulário_cep() {
+			//Limpa valores do formulário de cep.
+			document.getElementById('rua').value = ("");
+			document.getElementById('bairro').value = ("");
+			document.getElementById('cidade').value = ("");
+			document.getElementById('uf').value = ("");
+		}
+
+		function meu_callback(conteudo) {
+			if (!("erro" in conteudo)) {
+				//Atualiza os campos com os valores.
+				document.getElementById('rua').value = (conteudo.logradouro);
+				document.getElementById('bairro').value = (conteudo.bairro);
+				document.getElementById('cidade').value = (conteudo.localidade);
+				document.getElementById('uf').value = (conteudo.uf);
+			} //end if.
+			else {
+				//CEP não Encontrado.
+				limpa_formulário_cep();
+				alert("CEP não encontrado.");
+			}
+		}
+
+		function pesquisacep(valor) {
+
+			//Nova variável "cep" somente com dígitos.
+			var cep = valor.replace(/\D/g, '');
+
+			//Verifica se campo cep possui valor informado.
+			if (cep != "") {
+
+				//Expressão regular para validar o CEP.
+				var validacep = /^[0-9]{8}$/;
+
+				//Valida o formato do CEP.
+				if (validacep.test(cep)) {
+
+					//Preenche os campos com "..." enquanto consulta webservice.
+					document.getElementById('rua').value = "...";
+					document.getElementById('bairro').value = "...";
+					document.getElementById('cidade').value = "...";
+					document.getElementById('uf').value = "...";
+
+					//Cria um elemento javascript.
+					var script = document.createElement('script');
+
+					//Sincroniza com o callback.
+					script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+
+					//Insere script no documento e carrega o conteúdo.
+					document.body.appendChild(script);
+
+				} //end if.
+				else {
+					//cep é inválido.
+					limpa_formulário_cep();
+					alert("Formato de CEP inválido.");
+				}
+			} //end if.
+			else {
+				//cep sem valor, limpa formulário.
+				limpa_formulário_cep();
+			}
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+
+				<div class="login100-form validate-form fs-12">
+					<span class="login100-form-title p-b-49">
+						Supremo Sabor
+					</span>
+
+					<span class="fs-20 flex-c-m p-b-49">
+						Cardápio Digital
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+						<input class="input100" name="nome" type="text" id="nome" placeholder="Nome" required>
+					</div>
+
+
+					<!-- ======================================================================================================== -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+
+
+					<button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse"
+						data-target="#collapseExamplelanche" aria-expanded="false" aria-controls="collapseExample">
+						Lanche
+					</button>
+
+					<br>
+
+					<div class="collapse" id="collapseExamplelanche">
+
+						<table class="table fs-12">
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="d" value="d">
+									<label for="d">Hot dog simples </label>
+								</td>
+
+								<td>
+									R$ 9,50
+								</td>
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processD(-1)" />
+									<input id="quantD" name="quant" class="text d" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processD(1)">
+									<script>
+										function processD(quant) {
+											var value = parseInt(document.getElementById("quantD").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantD").value = 1;
+											} else {
+												document.getElementById("quantD").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongD">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongD" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Pão <br>
+													2 Salsicha <br>
+													Molho especial <br>
+													Milho e batata palha
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="e" value="e">
+									<label for="e">Hot dog bacon </label>
+								</td>
+
+								<td>
+									R$ 11,00
+								</td>
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processE(-1)" />
+									<input id="quantE" name="quant" class="text b" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processE(1)">
+									<script>
+										function processE(quant) {
+											var value = parseInt(document.getElementById("quantE").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantE").value = 1;
+											} else {
+												document.getElementById("quantE").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongE">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongE" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Pão <br>
+													2 Salsicha <br>
+													Bacon <br>
+													Molho especial <br>
+													Milho e batata palha
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="f" value="f">
+									<label for="f">Misto quente </label>
+								</td>
+
+								<td>
+									R$ 8,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processF(-1)" />
+									<input id="quantF" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processF(1)">
+									<script>
+										function processF(quant) {
+											var value = parseInt(document.getElementById("quantF").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantF").value = 1;
+											} else {
+												document.getElementById("quantF").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongF">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongF" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Pão de sal <br>
+													Presunto <br>
+													Muçarela e tomate
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="g" value="g">
+									<label for="g">X Salada </label>
+								</td>
+
+								<td>
+									R$ 11,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processG(-1)" />
+									<input id="quantG" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processG(1)">
+									<script>
+										function processG(quant) {
+											var value = parseInt(document.getElementById("quantG").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantG").value = 1;
+											} else {
+												document.getElementById("quantG").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongG">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongG" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Pão <br>
+													Hambúrguers <br>
+													Presunto <br>
+													Muçarela, alface e tomate
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="h" value="h">
+									<label for="h">X Tudo </label>
+								</td>
+
+								<td>
+									R$ 15,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processH(-1)" />
+									<input id="quantH" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processH(1)">
+									<script>
+										function processH(quant) {
+											var value = parseInt(document.getElementById("quantH").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantH").value = 1;
+											} else {
+												document.getElementById("quantH").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongH">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongH" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Pão <br>
+													2 Hambúrguers <br>
+													Presunto e Muçarela <br>
+													Ovo, Bacon, alface e Tomate
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="i" value="i">
+									<label for="i">X Frango Tudo</label>
+								</td>
+
+								<td>
+									R$ 17,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processI(-1)" />
+									<input id="quantI" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processI(1)">
+									<script>
+										function processI(quant) {
+											var value = parseInt(document.getElementById("quantI").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantI").value = 1;
+											} else {
+												document.getElementById("quantI").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongI">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongI" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Pão de sal <br>
+													Filé de frango na chapa <br>
+													Bacon, ovo, presunto e Muçarela <br>
+													alface e Tomate
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="j" value="j">
+									<label for="j">X Bauru</label>
+								</td>
+
+								<td>
+									R$ 18,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processJ(-1)" />
+									<input id="quantJ" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processJ(1)">
+									<script>
+										function processJ(quant) {
+											var value = parseInt(document.getElementById("quantJ").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantJ").value = 1;
+											} else {
+												document.getElementById("quantJ").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongJ">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongJ" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Pão <br>
+													Bife <br>
+													Presunto e Muçarela <br>
+													e Tomate
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="k" value="k">
+									<label for="k">Dogão</label>
+								</td>
+
+								<td>
+									R$ 20,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processK(-1)" />
+									<input id="quantK" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processK(1)">
+									<script>
+										function processK(quant) {
+											var value = parseInt(document.getElementById("quantK").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantK").value = 1;
+											} else {
+												document.getElementById("quantK").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongK">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongK" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Pão <br>
+													4 Salsicha, 2 Hambúrguers <br>
+													Bacon, Milho, Catupiry e ovo <br>
+													Presunto e Muçarela, alface e Tomate
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="l" value="l">
+									<label for="l">X Churrasco Tudo</label>
+								</td>
+
+								<td>
+									R$ 20,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processL(-1)" />
+									<input id="quantL" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processL(1)">
+									<script>
+										function processL(quant) {
+											var value = parseInt(document.getElementById("quantL").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantL").value = 1;
+											} else {
+												document.getElementById("quantL").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongL">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongL" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Pão de sal <br>
+													Bife na chapa, Bacon e ovo <br>
+													Presunto e Muçarela, alface e Tomate
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="m" value="m">
+									<label for="m">S.O.S</label>
+								</td>
+
+								<td>
+									R$ 25,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processM(-1)" />
+									<input id="quantM" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processM(1)">
+									<script>
+										function processM(quant) {
+											var value = parseInt(document.getElementById("quantM").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantM").value = 1;
+											} else {
+												document.getElementById("quantM").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongM">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongM" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													3 Hambúrguers <br>
+													2 Bife, bacon, Presunto e Muçarela <br>
+													Catupiry, alface,tomate e molho barbecue
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+						</table>
+					</div>
+
+					<!-- ========================================================================================================= -->
+
+					<button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse"
+						data-target="#collapseExamplebatata" aria-expanded="false" aria-controls="collapseExample">
+						Batata Frita
+					</button>
+
+					<br>
+
+					<div class="collapse" id="collapseExamplebatata">
+
+						<table class="table fs-12">
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="n" value="n">
+									<label for="n">Batata Frita M </label>
+								</td>
+
+								<td>
+									R$ 12,00
+								</td>
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processN(-1)" />
+									<input id="quantN" name="quant" class="text d" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processN(1)">
+									<script>
+										function processN(quant) {
+											var value = parseInt(document.getElementById("quantN").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantN").value = 1;
+											} else {
+												document.getElementById("quantN").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongN">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongN" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													300g de batata
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="o" value="o">
+									<label for="o">Batata Frita G </label>
+								</td>
+
+								<td>
+									R$ 20,00
+								</td>
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processO(-1)" />
+									<input id="quantO" name="quant" class="text b" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processO(1)">
+									<script>
+										function processO(quant) {
+											var value = parseInt(document.getElementById("quantO").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantO").value = 1;
+											} else {
+												document.getElementById("quantO").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongO">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongO" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													600g de Batata
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="p" value="p">
+									<label for="p">Batata Maluca1 M</label>
+								</td>
+
+								<td>
+									R$ 22,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processP(-1)" />
+									<input id="quantP" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processP(1)">
+									<script>
+										function processP(quant) {
+											var value = parseInt(document.getElementById("quantP").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantP").value = 1;
+											} else {
+												document.getElementById("quantP").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongP">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongP" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													300g de Batata <br>
+													queijo e bacon
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="q" value="q">
+									<label for="q">Batata Maluca1 G</label>
+								</td>
+
+								<td>
+									R$ 30,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processQ(-1)" />
+									<input id="quantQ" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processQ(1)">
+									<script>
+										function processQ(quant) {
+											var value = parseInt(document.getElementById("quantQ").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantQ").value = 1;
+											} else {
+												document.getElementById("quantQ").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongQ">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongQ" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													600g de Batata <br>
+													queijo e bacon
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="r" value="r">
+									<label for="r">Batata Maluca2 M </label>
+								</td>
+
+								<td>
+									R$ 25,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processR(-1)" />
+									<input id="quantR" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processR(1)">
+									<script>
+										function processR(quant) {
+											var value = parseInt(document.getElementById("quantR").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantR").value = 1;
+											} else {
+												document.getElementById("quantR").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongR">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongR" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													300g de Batata <br>
+													Cheddar, Bacon e Catupiry
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="s" value="s">
+									<label for="s">Batata Maluca2 G</label>
+								</td>
+
+								<td>
+									R$ 35,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processS(-1)" />
+									<input id="quantS" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processS(1)">
+									<script>
+										function processS(quant) {
+											var value = parseInt(document.getElementById("quantS").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantS").value = 1;
+											} else {
+												document.getElementById("quantS").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongS">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongS" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													600g de Batata <br>
+													Cheddar, Bacon e Catupiry
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="t" value="t">
+									<label for="t">Batata Supremo ik</label>
+								</td>
+
+								<td>
+									R$ 50,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processT(-1)" />
+									<input id="quantT" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processT(1)">
+									<script>
+										function processT(quant) {
+											var value = parseInt(document.getElementById("quantT").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantT").value = 1;
+											} else {
+												document.getElementById("quantT").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongT">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongT" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													1K de Batata <br>
+													queijo, Cheddar, Bacon e Catupiry
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+						</table>
+					</div>
+
+
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+					<!-- ============================================================================= -->
+
+
+					<button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse"
+						data-target="#collapseExamplemacarao" aria-expanded="false" aria-controls="collapseExample">
+						Macarrâo na chapa
+					</button>
+					<br>
+
+
+
+					<div class="collapse" id="collapseExamplemacarao">
+
+						<table class="table fs-12">
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="u" value="u">
+									<label for="u">Macarrâo na chapa P</label> <br>
+
+
+									<input type="radio" name="genderu" id="Calabresau" value="Calabresa">
+									<label for="Calabresau">Calabresa</label> <br>
+									<input type="radio" name="genderu" id="Carneu" value="Carne">
+									<label for="Carneu">Carne</label> <br>
+									<input type="radio" name="genderu" id="Frangou" value="Frango">
+									<label for="Frangou">Frango</label>
+									<br>
+									<br>
+								</td>
+
+								<td>
+									R$ 15,00
+								</td>
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processU(-1)" />
+									<input id="quantU" name="quant" class="text a" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processU(1)">
+									<script>
+										function processU(quant) {
+											var value = parseInt(document.getElementById("quantU").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantU").value = 1;
+											} else {
+												document.getElementById("quantU").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongU">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongU" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													mACATRRASASD
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="v" value="v">
+									<label for="b">Macarrâo na chapa M</label> <br>
+
+
+									<input type="radio" name="genderv" id="Calabresav" value="Calabresa">
+									<label for="Calabresav">Calabresa</label> <br>
+									<input type="radio" name="genderv" id="Carnev" value="Carne">
+									<label for="Carnev">Carne</label> <br>
+									<input type="radio" name="genderv" id="Frangov" value="Frango">
+									<label for="Frangov">Frango</label>
+									<br>
+									<br>
+								</td>
+
+								<td>
+									R$ 22,00
+								</td>
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processV(-1)" />
+									<input id="quantV" name="quant" class="text b" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processV(1)">
+									<script>
+										function processV(quant) {
+											var value = parseInt(document.getElementById("quantV").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantV").value = 1;
+											} else {
+												document.getElementById("quantV").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongV">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongV" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Coca-Cola de 600ml
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+							<!-- ============================================================================= -->
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="w" value="w">
+									<label for="w">Macarrâo na chapa G </label> <br>
+
+
+									<input type="radio" name="genderw" id="Calabresaw" value="Calabresa">
+									<label for="Calabresaw">Calabresa</label> <br>
+									<input type="radio" name="genderw" id="Carnew" value="Carne">
+									<label for="Carnew">Carne</label> <br>
+									<input type="radio" name="genderw" id="Frangow" value="Frango">
+									<label for="Frangow">Frango</label>
+									<br>
+									<br>
+								</td>
+
+								<td>
+									R$ 32,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processW(-1)" />
+									<input id="quantW" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processW(1)">
+									<script>
+										function processW(quant) {
+											var value = parseInt(document.getElementById("quantW").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantW").value = 1;
+											} else {
+												document.getElementById("quantW").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongW">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongW" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Coca-Cola de 2L
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+						</table>
+					</div>
+
+
+
+
+
+					<button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse"
+						data-target="#collapseExamplebebida" aria-expanded="false" aria-controls="collapseExample">
+						Bebidas
+					</button>
+
+					<div class="collapse" id="collapseExamplebebida">
+
+						<table class="table fs-12">
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="a" value="a">
+									<label for="a">Coca-Cola Lata </label>
+								</td>
+
+								<td>
+									R$ 5,00
+								</td>
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processA(-1)" />
+									<input id="quantA" name="quant" class="text a" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processA(1)">
+									<script>
+										function processA(quant) {
+											var value = parseInt(document.getElementById("quantA").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantA").value = 1;
+											} else {
+												document.getElementById("quantA").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongA">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongA" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Coca-Cola Lata
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="b" value="b">
+									<label for="b">Coca-Cola 600ml </label>
+								</td>
+
+								<td>
+									R$ 6,00
+								</td>
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processB(-1)" />
+									<input id="quantB" name="quant" class="text b" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processB(1)">
+									<script>
+										function processB(quant) {
+											var value = parseInt(document.getElementById("quantB").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantB").value = 1;
+											} else {
+												document.getElementById("quantB").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongB">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongB" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Coca-Cola de 600ml
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="c" value="c">
+									<label for="c">Coca-Cola 2L </label>
+								</td>
+
+								<td>
+									R$ 10,00
+								</td>
+
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processC(-1)" />
+									<input id="quantC" name="quant" class="text c" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processC(1)">
+									<script>
+										function processC(quant) {
+											var value = parseInt(document.getElementById("quantC").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantC").value = 1;
+											} else {
+												document.getElementById("quantC").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongC">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongC" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Coca-Cola de 2L
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+							<tr>
+								<td>
+									<input type="checkbox" name="pedido" id="bb" value="bb">
+									<label for="bb">Jaboti de 2L </label>
+								</td>
+
+								<td>
+									R$ 6,00
+								</td>
+
+								<td>
+									<input type="button" id="plus" value='-' onclick="processBB(-1)" />
+									<input id="quantBB" name="quant" class="text b" size="1" type="text" value="1"
+										maxlength="5" />
+									<input type="button" id="minus" value='+' onclick="processBB(1)">
+									<script>
+										function processBB(quant) {
+											var value = parseInt(document.getElementById("quantBB").value);
+											value += quant;
+											if (value < 1) {
+												document.getElementById("quantBB").value = 1;
+											} else {
+												document.getElementById("quantBB").value = value;
+											}
+										}
+									</script>
+								</td>
+
+								<td>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-sm fs-9" data-toggle="modal"
+										data-target="#exampleModalLongBB">
+										+
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModalLongBB" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLongTitle">Ingredientes</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													Jaboti de 2L
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-primary"
+														data-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</td>
+
+							</tr>
+
+						</table>
+					</div>
+
+					<br><br>
+					<label for="form18">Escreva uma observação sobre o pedido:</label>
+					<textarea name="obs" id="obs" cols="100" rows="5" class="form-control">
+
+					</textarea>
+
+					<div class="flex-c-m m-t-10 ">
+
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#exampleModalCenter">
+						Entregar
+					</button>
+					
+					<button type="button" class="btn btn-success m-1" onclick="pedir()">
+						Pedir
+					</button>
+					</div>
+
+					<div class="txt1 text-center p-t-54 p-b-20">
+						<span>
+							Acesse tambem
+						</span>
+					</div>
+
+					<div class="flex-c-m">
+						<a href="#" class="login100-social-item bg1">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg3">
+							<i class="fa fa-instagram"></i>
+						</a>
+					</div>
+
+					<div class="flex-col-c p-t-55">
+						<span class="txt1 p-b-17">
+							Desenvolvido por
+						</span>
+
+						<a href="#" class="txt2">
+							Design Creation
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Endereço</h5>
+					<button type="button" class="close" data-dismiss="modal" onclick="limpa_endereco()"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+
+					<div class="wrap-input100 validate-input m-b-31" data-validate="Password is required">
+						<input class="input100" name="endereco" type="text" id="cep" value="" placeholder="cep"
+							maxlength="9" onblur="pesquisacep(this.value);">
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+						<input class="input100" name="endereco" type="text" id="rua" placeholder="rua" />
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+						<input class="input100" name="endereco" type="text" id="numero" placeholder="numero" />
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+						<input class="input100" name="endereco" type="text" id="bairro" placeholder="bairro" />
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+						<input class="input100" name="endereco" type="text" id="cidade" placeholder="cidade" />
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+						<input class="input100" name="endereco" type="text" id="uf" placeholder="uf" />
+					</div>
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="limpa_endereco()">Vou
+						Buscar</button>
+					<button type="button" class="btn btn-primary" onclick="pedir()">Pedir</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+
+
+</html>
